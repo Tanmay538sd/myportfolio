@@ -1,0 +1,73 @@
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #8d8df5;
+    color: #01161E;
+}
+
+header {
+    background-color: #124559;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fafafa; /* Coral color for navigation links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #afcafc; /* Soft lavender hover effect */
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(29, 174, 231, 0.1);
+}
+
+.project {
+    border: 1px solid #124559;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #124559;
+    color: white;
+}
+
+
+.hover-button {
+    background-color: #60a9f8; /* Initial blue color */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.hover-button:hover {
+    background-color: #9f9ff5; /* Color on hover */
+    color: #01161E; /* Dark text color on hover for contrast */
+}

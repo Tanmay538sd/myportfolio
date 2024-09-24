@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #8e8ef0;
+    color: #083749;
+    font-size: large;
+}
+
+header {
+    background-color: #124559;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fafafa; /* Coral color for navigation links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #afcafc; /* Soft lavender hover effect */
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #124559; /* Different color for section headings */
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #124559;
+    color: white;
+}
+
+.size{
+    font-size: 20px;
+}

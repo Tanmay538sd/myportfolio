@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact Me - Tanmay Singh</title>
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact-selection">
+        <h2>How would you like to contact me?</h2>
+        <button id="emailButton">Via E-Mail</button>
+        <button id="mobileButton">Via Mobile</button>
+    </section>
+
+    <section id="emailForm" class="contact-form" style="display: none;">
+        <h2>Send a Message via E-Mail</h2>
+        <form id="contactForm">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your E-Mail" required>
+            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            <button class="hover-button" type="submit">Send Message</button>
+        </form>
+        <p id="responseMessage"></p>
+    </section>
+    
+    <section id="mobileForm" class="contact-form" style="display: none;">
+        <h2>Send a Message via Mobile</h2>
+        <form id="mobileContactForm">
+            <input type="text" id="mobileName" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Your Phone Number" required>
+            <textarea id="mobileMessage" placeholder="Your Message" required></textarea>
+            <button class="hover-button" type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script src="contact.js"></script>
+    <script>
+        // Show email form when emailButton is clicked
+        document.getElementById("emailButton").addEventListener("click", function() {
+            document.getElementById("emailForm").style.display = "block";
+            document.getElementById("mobileForm").style.display = "none";
+        });
+
+        // Show mobile form when mobileButton is clicked
+        document.getElementById("mobileButton").addEventListener("click", function() {
+            document.getElementById("mobileForm").style.display = "block";
+            document.getElementById("emailForm").style.display = "none";
+        });
+
+        // Form submission for email
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this); // Create a FormData object from the form
+            
+            fetch("https://formspree.io/f/xnnakwob", { // Corrected line
+                method: "POST", // Use POST method
+                body: formData, // Send the form data
+                headers: {
+                    "Accept": "application/json" // Set Accept header for JSON response
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    document.getElementById("responseMessage").innerText = "Message sent successfully!";
+                    document.getElementById("contactForm").reset(); // Reset the form
+                } else {
+                    document.getElementById("responseMessage").innerText = "Oops! There was a problem sending your message.";
+                }
+            }).catch(function(error) {
+                document.getElementById("responseMessage").innerText = "Error: " + error; // Handle errors
+            });
+        });
+    </script>
+</body>
+</html>
+
